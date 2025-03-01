@@ -1,7 +1,6 @@
 import os
 import stratdev
 
-
 def authenticate_alpaca():
     env_path = stratdev.__file__[:-11] + 'backend'
     backend_files = [f for f in os.listdir(env_path)]
@@ -22,6 +21,3 @@ def authenticate_alpaca():
 
     except Exception:
         print(f'Error creating .env file')
-    
-
-authenticate_alpaca()
