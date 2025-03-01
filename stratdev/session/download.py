@@ -1,6 +1,9 @@
 import os
 import json
 from datetime import datetime
+import importlib
+import stratdev
+from stratdev.authenticate import authenticate_alpaca
 from stratdev.backend.ohlc import GetOHLC
 from stratdev.backend.symbols import *
 
@@ -128,10 +131,16 @@ def download_ohlc(ohlc_path: str='./ohlc/'):
 
     # Choose source
     while True:
+        env_path = stratdev.__file__[:-11] + 'backend'
+        backend_files = [f for f in os.listdir(env_path)]
         try:
             print('\n')
             source = input('Source (1 for alpaca, 2 for yfinance): ')
-            if int(source) == 1 or int(source) == 2:
+            if int(source) == 1 and '.env' not in backend_files:
+                authenticate_alpaca()
+                importlib.reload(stratdev.backend.ohlc)
+                break
+            elif int(source) == 1 or int(source) == 2:
                 break
             else:
                 print('Invalid choice. Please choose 1 or 2.')
