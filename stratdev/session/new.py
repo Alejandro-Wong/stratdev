@@ -14,7 +14,7 @@ ohlc dataframe.
 
 # Pre-written content for python files
 
-start = (
+new_download = (
 """
 import stratdev.session.start
 """
@@ -122,8 +122,8 @@ def new_session():
             print(f"Error creating folder '{folder_name}' : {e}")
 
         # Create files in session folder
-        filenames = ['start','data_prep','strategy', 'backtest']
-        files = [start, data_prep, strategy, backtest]
+        filenames = ['new_download','data_prep','strategy', 'backtest']
+        files = [new_download, data_prep, strategy, backtest]
 
         for name, content in zip(filenames, files):
             create_file(name, content, folder_name)
@@ -144,7 +144,7 @@ def new_session():
         
         else:
             os.chdir(folder_name)   # change directory to session folder
-            subprocess.run(['python3', 'start.py'])     # run start.py
+            subprocess.run(['python3', 'new_download.py'])     # run new_download.py
             # os.system('/bin/bash')      # artificially change directory to session folder 
             
 new_session()
@@ -152,7 +152,5 @@ new_session()
 #     new_session()
 
 
-    
 
 
-        
