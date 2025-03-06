@@ -20,7 +20,7 @@ license-files = ["LICEN[CS]E*"]
 dependencies = [
     "setuptools >= 75.8.0",
     "alpaca-py >= 0.38.0",
-    "backtesting >= 0.6.1",
+    "backtesting >= 0.3.3",
     "bokeh >= 3.6.3",
     "python-dotenv >= 0.0.1",
     "matplotlib >= 3.10.0",
@@ -34,5 +34,3 @@ dependencies = [
 Homepage = "https://github.com/Alejandro-wong/stratdev"
 Issues = "https://github.com/Alejandro-wong/stratdev/issues"
 
-[project.scripts]
-authenticate = "stratdev.authenticate:authenticate_alpaca"
