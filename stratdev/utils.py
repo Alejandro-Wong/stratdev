@@ -61,7 +61,10 @@ def ticker_list(path: str) -> list:
     tickers = []
     for file in os.listdir(path):
         split_file = file.split('_')
-        tickers.append(split_file[0])
+        if split_file[0] not in tickers:
+            tickers.append(split_file[0])
+        else:
+            continue
 
     return tickers
 
