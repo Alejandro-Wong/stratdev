@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "stratdev"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
-  { name="Alejandro Wong", email="aa.wongfl@gmail.com" },
+  { name="Alejandro Wong", email="alejandroawong@gmail.com" },
 ]
 description = "Financial data aqcuisition and organization system for backtesting trading strategies"
 readme = "README.md"
@@ -33,4 +33,3 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/Alejandro-wong/stratdev"
 Issues = "https://github.com/Alejandro-wong/stratdev/issues"
-
