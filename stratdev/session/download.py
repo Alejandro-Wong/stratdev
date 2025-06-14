@@ -157,6 +157,18 @@ def download_ohlc(ohlc_path: str='./ohlc/'):
             print('\n')
             interval = input('Interval: ')
 
+            # Write period and interval into data_prep.py
+            with open('./data_prep.py', 'r') as file:
+                lines = file.readlines()
+
+            new_period = f"period = '{period}'"
+            new_interval = f"interval = '{interval}'"
+            lines[9 - 1] = new_period + '\n'
+            lines[10 - 1] = new_interval + '\n'
+
+            with open('./data_prep.py', 'w') as file:
+                file.writelines(lines)
+                
             # Validity check
             if (
                 any(p in period for p in period_accept) and
