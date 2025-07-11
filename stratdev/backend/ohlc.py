@@ -70,6 +70,7 @@ class GetOHLC:
         # Round OHLC data to two decimal places, drop unneeded column, convert index to pd.datetime format 
         df = download.round(self.two_decimals)
         df.drop(columns='Adj Close', inplace=True)
+        df.columns = df.columns.get_level_values(0)
         df.index = pd.to_datetime(download.index)
 
         if not self.path:
