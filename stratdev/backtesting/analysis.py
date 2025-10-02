@@ -68,6 +68,3 @@ def plot_equity_curves(backtest: object, mt_equity_curves:pd.DataFrame, msc: str
     return fig
 
 
-
-
-
