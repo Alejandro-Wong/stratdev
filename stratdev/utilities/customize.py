@@ -1,7 +1,7 @@
 import os
 from ohlc_data.utils import dropdown
-from btpy_session.utilities.file_utils import write_to_file, verify_paths, verify_filename
-from btpy_session.utilities.get_utils import get_line_numbers
+from stratdev.utilities.file_utils import write_to_file, verify_paths, verify_filename
+from stratdev.utilities.get_utils import get_line_numbers
 
 
 def set_timeframe(ohlc_csv_path: str='../ohlc_csv/', data_prep_path: str='./data_prep.py') -> None:
