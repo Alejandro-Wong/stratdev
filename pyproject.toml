@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "stratdev"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Alejandro Wong", email="alejandroawong@gmail.com" },
 ]
@@ -30,6 +30,11 @@ dependencies = [
     "yfinance >= 0.2.53",
     "ohlc-data >= 1.1.1"
 ]
+
+[tool.poetry.scripts]
+new_session = "stratdev.new_session:main"
+set_timeframe = "stratdev.utilities.customize:set_timeframe"
+set_strategy = "stratdev.utilities.customize:set_strategy"
 
 [project.urls]
 Homepage = "https://github.com/Alejandro-wong/stratdev"
