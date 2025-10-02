@@ -8,7 +8,6 @@ strategy = (
 import pandas as pd
 from datetime import datetime, time
 from backtesting import Strategy, Backtest
-from backtesting.lib import resample_apply
 
 
 class StratName(Strategy):
@@ -32,7 +31,7 @@ class StratName(Strategy):
 
 data_prep = (
 """
-from btpy_session.utilities.get_utils import get_dfs
+from stratdev.utilities.get_utils import get_dfs
 
 ohlc_csv_path = '../ohlc_csv/'
 updated_ohlc_path = './ohlc/'
@@ -52,7 +51,7 @@ updated_dfs = get_dfs(updated_ohlc_path, period, interval)
 
 backtest = (
 """
-from btpy_session.backtesting.run_backtest import backtest_analysis   
+from stratdev.backtesting.run_backtest import backtest_analysis   
 from strategy import StratName 
 from data_prep import updated_dfs 
 
